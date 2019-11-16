@@ -4,13 +4,300 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
 
     <title>Trang chủ</title>
 
+    <style type="text/css">
+        body {
+            font-family: 'Varela Round', sans-serif;
+        }
+
+        .form-control {
+            box-shadow: none;
+            font-weight: normal;
+            font-size: 13px;
+        }
+
+            .form-control:focus {
+                border-color: #33cabb;
+                box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            }
+
+        .navbar-header.col {
+            padding: 0 !important;
+        }
+
+        .navbar {
+            background: #fff;
+            padding-left: 16px;
+            padding-right: 16px;
+            border-bottom: 1px solid #dfe3e8;
+            border-radius: 0;
+        }
+
+        .nav-link img {
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            margin: -8px 0;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .navbar .navbar-brand, .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
+            padding-left: 0;
+            font-size: 20px;
+            padding-right: 50px;
+        }
+
+            .navbar .navbar-brand b {
+                font-weight: bold;
+                color: #33cabb;
+            }
+
+        .navbar .form-inline {
+            display: inline-block;
+        }
+
+        .navbar .nav li {
+            position: relative;
+        }
+
+            .navbar .nav li a {
+                color: #888;
+            }
+
+        .search-box {
+            position: relative;
+        }
+
+            .search-box input {
+                padding-right: 35px;
+                border-color: #dfe3e8;
+                border-radius: 4px !important;
+                box-shadow: none;
+            }
+
+            .search-box .input-group-addon {
+                min-width: 35px;
+                border: none;
+                background: transparent;
+                position: absolute;
+                right: 0;
+                z-index: 9;
+                padding: 7px;
+                height: 100%;
+            }
+
+            .search-box i {
+                color: #a0a5b1;
+                font-size: 19px;
+            }
+
+        .navbar .nav .btn-primary, .navbar .nav .btn-primary:active {
+            color: #fff;
+            background: #33cabb;
+            padding-top: 8px;
+            padding-bottom: 6px;
+            vertical-align: middle;
+            border: none;
+        }
+
+            .navbar .nav .btn-primary:hover, .navbar .nav .btn-primary:focus {
+                color: #fff;
+                outline: none;
+                background: #31bfb1;
+            }
+
+        .navbar .navbar-right li:first-child a {
+            padding-right: 30px;
+        }
+
+        .navbar .nav-item i {
+            font-size: 18px;
+        }
+
+        .navbar .dropdown-item i {
+            font-size: 16px;
+            min-width: 22px;
+        }
+
+        .navbar ul.nav li.active a, .navbar ul.nav li.open > a {
+            background: transparent !important;
+        }
+
+        .navbar .nav .get-started-btn {
+            min-width: 120px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .navbar ul.nav li.open > a.get-started-btn {
+            color: #fff;
+            background: #31bfb1 !important;
+        }
+
+        .navbar .dropdown-menu {
+            border-radius: 1px;
+            border-color: #e5e5e5;
+            box-shadow: 0 2px 8px rgba(0,0,0,.05);
+        }
+
+        .navbar .nav .dropdown-menu li {
+            color: #999;
+            font-weight: normal;
+        }
+
+            .navbar .nav .dropdown-menu li a, .navbar .nav .dropdown-menu li a:hover, .navbar .nav .dropdown-menu li a:focus {
+                padding: 8px 20px;
+                line-height: normal;
+            }
+
+        .navbar .navbar-form {
+            border: none;
+        }
+
+        .navbar .dropdown-menu.form-wrapper {
+            width: 280px;
+            padding: 20px;
+            left: auto;
+            right: 0;
+            font-size: 14px;
+        }
+
+            .navbar .dropdown-menu.form-wrapper a {
+                color: #33cabb;
+                padding: 0 !important;
+            }
+
+                .navbar .dropdown-menu.form-wrapper a:hover {
+                    text-decoration: underline;
+                }
+
+        .navbar .form-wrapper .hint-text {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+
+        .navbar .form-wrapper .social-btn .btn, .navbar .form-wrapper .social-btn .btn:hover {
+            color: #fff;
+            margin: 0;
+            padding: 0 !important;
+            font-size: 13px;
+            border: none;
+            transition: all 0.4s;
+            text-align: center;
+            line-height: 34px;
+            width: 47%;
+            text-decoration: none;
+        }
+
+        .navbar .social-btn .btn-primary {
+            background: #507cc0;
+        }
+
+            .navbar .social-btn .btn-primary:hover {
+                background: #4676bd;
+            }
+
+        .navbar .social-btn .btn-info {
+            background: #64ccf1;
+        }
+
+            .navbar .social-btn .btn-info:hover {
+                background: #4ec7ef;
+            }
+
+        .navbar .social-btn .btn i {
+            margin-right: 5px;
+            font-size: 16px;
+            position: relative;
+            top: 2px;
+        }
+
+        .navbar .form-wrapper .form-footer {
+            text-align: center;
+            padding-top: 10px;
+            font-size: 13px;
+        }
+
+            .navbar .form-wrapper .form-footer a:hover {
+                text-decoration: underline;
+            }
+
+        .navbar .form-wrapper .checkbox-inline input {
+            margin-top: 3px;
+        }
+
+        .or-seperator {
+            margin-top: 32px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+
+            .or-seperator b {
+                color: #666;
+                padding: 0 8px;
+                width: 30px;
+                height: 30px;
+                font-size: 13px;
+                text-align: center;
+                line-height: 26px;
+                background: #fff;
+                display: inline-block;
+                border: 1px solid #e0e0e0;
+                border-radius: 50%;
+                position: relative;
+                top: -15px;
+                z-index: 1;
+            }
+
+        .navbar .checkbox-inline {
+            font-size: 13px;
+        }
+
+        .navbar .navbar-right .dropdown-toggle::after {
+            display: none;
+        }
+
+        @media (min-width: 1200px) {
+            .form-inline .input-group {
+                width: 300px;
+                margin-left: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar .dropdown-menu.form-wrapper {
+                width: 100%;
+                padding: 10px 15px;
+                background: transparent;
+                border: none;
+            }
+
+            .navbar .form-inline {
+                display: block;
+            }
+
+            .navbar .input-group {
+                width: 100%;
+            }
+
+            .navbar .nav .btn-primary, .navbar .nav .btn-primary:active {
+                display: block;
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).on("click", ".navbar-right .dropdown-menu", function (e) {
+            e.stopPropagation();
+        });
+    </script>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -25,16 +312,39 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
                                 <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Đăng nhập</a>
-                        </li>
-                    </ul>
+                        </a>
+                    </li>
+
+                    <li class="nav-item" id="thongke" visible="false" runat="server">
+                        <a class="nav-link" href="Thongke.aspx">Thống kê</a>
+                    </li>
+
+                    <li class="nav-item" id="login" runat="server">
+                        <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Đăng nhập</a>
+                        <ul class="dropdown-menu form-wrapper">
+                            <li>
+                                <center><h1>Đăng nhập</h1></center>
+                                <div class="form-group">
+                                    <asp:TextBox ID="tendangnhap" class="form-control" placeholder="Tên đăng nhập" runat="server" required="true"></asp:TextBox>
+                                </div>
+                                <div class="form-group">
+                                    <asp:TextBox TextMode="Password" ID="matkhau" class="form-control" placeholder="Mật khẩu" runat="server" required="true"></asp:TextBox>
+                                </div>
+                                <asp:Button ID="dangnhap" class="btn btn-primary btn-block" runat="server" OnClick="dangnhap_Click" Text="Đăng nhập" />
+                                <div class="form-footer">
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item" id="logout" visible="false" runat="server">
+                        <a class="nav-link" href="#">Đăng xuất</a>
+                    </li>
+                </ul>
             </div>
         </nav>
 
@@ -45,7 +355,8 @@
 
                 <div class="col-lg-3">
 
-                    <h1 class="my-4"><img src="img/Untitled.png"></h1>
+                    <h1 class="my-4">
+                        <img src="img/Untitled.png"></h1>
                     <div class="list-group">
                         <div class="list-group-item col-md-12">
                             <h4>Tìm theo tên</h4>
@@ -65,13 +376,13 @@
                         </ol>
                         <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active">
-                                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+                                <img class="d-block img-fluid" src="img/banner1.jpg" alt="First slide" style="height: 350px; width: 900px;">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+                                <img class="d-block img-fluid" src="img/banner2.jpg" alt="Second slide" style="height: 350px; width: 900px;">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+                                <img class="d-block img-fluid" src="img/banner3.jpg" alt="Third slide" style="height: 350px; width: 900px;">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -85,108 +396,25 @@
                     </div>
 
                     <div class="row">
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#">
-                                    <img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Item One</a>
-                                    </h4>
-                                    <h5>$24.99</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                        <asp:Repeater ID="Repeater1" runat="server">
+                            <ItemTemplate>
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="card h-100">
+                                        <a href="#">
+                                            <img class="card-img-top" src="<%#Eval("anhminhhoa")%>" alt=""></a>
+                                        <div class="card-body">
+                                            <h4 class="card-title" style="height: 50px;">
+                                                <a href="#"><%#Eval("tenmathang")%></a>
+                                            </h4>
+                                            <h5><%#Eval("dongia")%>VND</h5>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted">Còn <%#Eval("soluongton")%> sản phẩm</small>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#">
-                                    <img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Item Two</a>
-                                    </h4>
-                                    <h5>$24.99</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#">
-                                    <img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Item Three</a>
-                                    </h4>
-                                    <h5>$24.99</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#">
-                                    <img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Item Four</a>
-                                    </h4>
-                                    <h5>$24.99</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#">
-                                    <img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Item Five</a>
-                                    </h4>
-                                    <h5>$24.99</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#">
-                                    <img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Item Six</a>
-                                    </h4>
-                                    <h5>$24.99</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                                </div>
-                            </div>
-                        </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
 
                     </div>
                     <!-- /.row -->
@@ -207,6 +435,7 @@
             </div>
             <!-- /.container -->
         </footer>
+
 
         <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.min.js"></script>

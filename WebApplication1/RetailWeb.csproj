@@ -124,6 +124,7 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="libraryweb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Thongke.aspx.cs">
       <DependentUpon>Thongke.aspx</DependentUpon>
