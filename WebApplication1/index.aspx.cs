@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Web.UI.HtmlControls;
 
 namespace WebApplication1
 {
@@ -32,6 +33,17 @@ namespace WebApplication1
                 login.Visible = false;
                 logout.Visible = true;
                 thongke.Visible = true;
+                Page_Load(sender, e);
+            }
+        }
+
+
+        protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            HtmlGenericControl theDiv = e.Item.FindControl("theDiv") as HtmlGenericControl;
+            if (Session["tendangnhap"] == null)
+            {
+                theDiv.Visible = false;
             }
         }
     }

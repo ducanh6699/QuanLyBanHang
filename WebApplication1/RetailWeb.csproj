@@ -110,6 +110,7 @@
     <Content Include="index.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="suaxoa.aspx" />
     <Content Include="Thongke.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -126,6 +127,13 @@
     </Compile>
     <Compile Include="libraryweb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="suaxoa.aspx.cs">
+      <DependentUpon>suaxoa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="suaxoa.aspx.designer.cs">
+      <DependentUpon>suaxoa.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Thongke.aspx.cs">
       <DependentUpon>Thongke.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
