@@ -12,7 +12,7 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Page.Form.Attributes.Add("enctype", "multipart/form-data");
             DataTable tb = null;
             if (Session["tendangnhap"] == null || Request.QueryString["id"] == null || Request.QueryString["id"] == "")
             {
@@ -36,27 +36,42 @@ namespace WebApplication1
             logout.Visible = true;
             thongke.Visible = true;
 
-            tenmathang.Text = tb.Rows[0]["tenmathang"].ToString();
-            mavach.Text = tb.Rows[0]["mavach"].ToString();
-            loaihang.SelectedValue = tb.Rows[0]["IDloaihang"].ToString(); 
-            soluongton.Text = tb.Rows[0]["soluongton"].ToString();
-            dongia.Text = tb.Rows[0]["dongia"].ToString();
-            anhminhhoa1.Text = tb.Rows[0]["anhminhhoa"].ToString();
-
-            if (IsPostBack && fileUpload.PostedFile != null)
+            if (!IsPostBack)
             {
-                if (fileUpload.PostedFile.FileName.Length > 0)
-                {
-                    anhminhhoa1.Text = "img/"+fileUpload.PostedFile.FileName;
-                }
+                tenmathang.Text = tb.Rows[0]["tenmathang"].ToString();
+                mavach.Text = tb.Rows[0]["mavach"].ToString();
+                loaihang.SelectedValue = tb.Rows[0]["IDloaihang"].ToString();
+                soluongton.Text = tb.Rows[0]["soluongton"].ToString();
+                dongia.Text = tb.Rows[0]["dongia"].ToString();
+                tb = libraryweb.laydulieu("Select ID, tenloaihang from loaihang");
+                loaihang.DataSource = tb;
+                loaihang.DataTextField = "tenloaihang";
+                loaihang.DataValueField = "ID";
+                loaihang.DataBind();
             }
 
-            tb = libraryweb.laydulieu("Select ID, tenloaihang from loaihang");
-            loaihang.DataSource = tb;
-            loaihang.DataTextField = "tenloaihang";
-            loaihang.DataValueField = "ID";
-            loaihang.DataBind();
+
         }
 
+        protected void sua_Click(object sender, EventArgs e)
+        {
+            if (fileUpload.HasFile)
+            {
+                string filename = fileUpload.FileName;
+                fileUpload.SaveAs(Server.MapPath("~/img/") + filename);
+                libraryweb.themsuaxoa("Update mathang set IDloaihang = " + loaihang.SelectedValue.ToString() + ", mavach ='" + mavach.Text + "', tenmathang='" + tenmathang.Text + "', soluongton='" + soluongton.Text + "', dongia ='" + dongia.Text + "', anhminhhoa='" + filename + "' Where id="+ Request.QueryString["id"].ToString());
+
+            }
+            else
+            {
+                libraryweb.themsuaxoa("Update mathang set IDloaihang = " + loaihang.SelectedValue.ToString() + ", mavach ='" + mavach.Text + "', tenmathang='" + tenmathang.Text + "', soluongton='" + soluongton.Text + "', dongia ='" + dongia.Text + "' Where id=" + Request.QueryString["id"].ToString());
+            }
+        }
+
+        protected void xoa_Click(object sender, EventArgs e)
+        {
+            libraryweb.themsuaxoa("Delete From mathang Where id=" + Request.QueryString["id"].ToString());
+            Response.Redirect("index.aspx");
+        }
     }
 }

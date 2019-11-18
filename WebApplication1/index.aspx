@@ -400,7 +400,7 @@
                                 <div class="col-lg-4 col-md-6 mb-4" runat="server">
                                     <div class="card h-100">
                                         <a href="#">
-                                            <img class="card-img-top img-responsive img-fluid" src="<%#Eval("anhminhhoa")%>" style="height:175px;width:260px;"></a>
+                                            <img class="card-img-top img-responsive img-fluid" src="img/<%#Eval("anhminhhoa")%>" style="height: 175px; width: 260px;"></a>
                                         <div class="card-body">
                                             <h4 class="card-title" style="height: 50px;">
                                                 <a href="#"><%#Eval("tenmathang")%></a>
@@ -409,7 +409,7 @@
                                         </div>
                                         <div class="card-footer">
                                             <small class="text-muted float-left">Còn <%#Eval("soluongton")%> sản phẩm</small>
-                                           <div runat="server" id="theDiv"><a href="suaxoa.aspx?id=<%#Eval("id")%>" class="text-muted float-right">Sửa/Xóa</a></div>
+                                            <div runat="server" id="theDiv"><a href="suaxoa.aspx?id=<%#Eval("id")%>" class="text-muted float-right">Sửa/Xóa</a></div>
                                         </div>
                                     </div>
                                 </div>

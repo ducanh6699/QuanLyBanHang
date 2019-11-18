@@ -20,5 +20,16 @@ namespace WebApplication1
             con.Close();
             return tb;
         }
+
+        public static void themsuaxoa(String sql)
+        {
+            OleDbConnection con = new OleDbConnection(ketnoi);
+            con.Open();
+            OleDbCommand cmd = new OleDbCommand(sql, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
     }
+
+
 }

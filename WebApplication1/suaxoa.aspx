@@ -108,27 +108,17 @@
 
                 <div class="col-md-6 col-sm-12">
                     <div class="form-group row">
-                        <label for="dongia" class="col-md-4 col-form-label">Ảnh minh hoa</label>
+                        <label for="fileUpload" class="col-md-4 col-form-label">Đơn giá</label>
                         <div class="col-md-8">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Upload</span>
-                                </div>
-                                <div class="custom-file">
-                                    <asp:FileUpload onchange="this.form.submit()" ID="fileUpload" CssClass="custom-file-input" runat="server" />
-                                    <asp:TextBox ID="anhminhhoa1" class="custom-file-label" for="inputGroupFile01" runat="server"></asp:TextBox>
-                                </div>
-                                <div class="input-group-append">
-                                    <span class="input-group-text">Upload</span>
-                                </div>
-                            </div>
+                            <asp:FileUpload ID="fileUpload" CssClass="form-control" runat="server" />
                         </div>
                     </div>
                 </div>
 
+
                 <div class="col-md-6 col-sm-12 offset-md-2">
-                    <asp:Button ID="sua" class="btn btn-info form-control col-md-4" runat="server" Text="Sửa" />
-                    <asp:Button ID="xoa" class="btn btn-danger form-control col-md-4" runat="server" Text="Xóa" />
+                    <asp:Button ID="sua" class="btn btn-info form-control col-md-4" runat="server" Text="Sửa" OnClientClick="return confirm('Xác nhận sửa ?');" OnClick="sua_Click" />
+                    <asp:Button ID="xoa" class="btn btn-danger form-control col-md-4" runat="server" OnClientClick="return confirm('Xác nhận xoá ?');" Text="Xóa" OnClick="xoa_Click" />
                 </div>
 
 
