@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WebApplication1.index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WebApplication1.index" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 
@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-
     <title>Trang chủ</title>
 
     <style type="text/css">
@@ -327,16 +326,18 @@
                         <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Đăng nhập</a>
                         <ul class="dropdown-menu form-wrapper">
                             <li>
+
                                 <center><h1>Đăng nhập</h1></center>
                                 <div class="form-group">
-                                    <asp:TextBox ID="tendangnhap" class="form-control" placeholder="Tên đăng nhập" runat="server" required="true"></asp:TextBox>
+                                    <asp:TextBox ID="tendangnhap" class="form-control" placeholder="Tên đăng nhập" runat="server" ></asp:TextBox>
                                 </div>
                                 <div class="form-group">
-                                    <asp:TextBox TextMode="Password" ID="matkhau" class="form-control" placeholder="Mật khẩu" runat="server" required="true"></asp:TextBox>
+                                    <asp:TextBox TextMode="Password" ID="matkhau" class="form-control" placeholder="Mật khẩu" runat="server" ></asp:TextBox>
                                 </div>
                                 <asp:Button ID="dangnhap" class="btn btn-primary btn-block" runat="server" OnClick="dangnhap_Click" Text="Đăng nhập" />
                                 <div class="form-footer">
                                 </div>
+
                             </li>
                         </ul>
                     </li>
@@ -353,17 +354,49 @@
 
             <div class="row">
 
-                <div class="col-lg-3">
+                <div class="col-md-3">
 
                     <h1 class="my-4">
                         <img src="img/Untitled.png"></h1>
-                    <div class="list-group">
-                        <div class="list-group-item col-md-12">
-                            <h4>Tìm theo tên</h4>
-                            <asp:TextBox CssClass="col-md-8" ID="TextBox1" runat="server"></asp:TextBox><asp:Button ID="Button1" CssClass="col-md-4" runat="server" Text="Button" />
-                        </div>
-                    </div>
+                    <div class="card">
+                        <article class="card-group-item">
+                            <header class="card-header">
+                                <h6 class="title">Tìm theo tên </h6>
+                            </header>
+                            <div class="filter-content">
+                                <div class="card-body">
 
+                                    <asp:TextBox ID="ten" class="form-control" placeholder="Nhập tên sản phẩm" runat="server"></asp:TextBox>
+                                    <hr />
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label>Từ</label>
+                                            <asp:TextBox ID="giatu" CssClass="form-control" value="0" runat="server" ></asp:TextBox>
+                                        </div>
+                                        <div class="form-group col-md-6 text-right">
+                                            <label>Đến</label>
+                                            <asp:TextBox ID="giaden" CssClass="form-control" value="1000000" runat="server" ></asp:TextBox>
+                                        </div>
+                                        <asp:Button ID="tim" runat="server" CssClass="form-control btn btn-dark" Text="Tìm" OnClick="tim_Click" />
+                                    </div>
+
+                                </div>
+                                <!-- card-body.// -->
+                            </div>
+                        </article>
+                        <!-- card-group-item.// -->
+
+                        <article class="card-group-item">
+                            <header class="card-header">
+                                <h6 class="title">Tìm theo loại </h6>
+                            </header>
+                            <div class="filter-content">
+                                <div class="card-body">
+                                    <asp:CheckBoxList ID="checkboxloaihang" runat="server" OnSelectedIndexChanged="checkboxloaihang_SelectedIndexChanged" AutoPostBack="true"></asp:CheckBoxList>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
                 <!-- /.col-lg-3 -->
 
@@ -395,7 +428,7 @@
                         </a>
                     </div>
                     <div class="row">
-                        <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound">
+                        <asp:ListView ID="Listview1" OnPagePropertiesChanged="Listview1_PagePropertiesChanged" runat="server" OnItemDataBound="Listview1_ItemDataBound">
                             <ItemTemplate>
                                 <div class="col-lg-4 col-md-6 mb-4" runat="server">
                                     <div class="card h-100">
@@ -414,8 +447,15 @@
                                     </div>
                                 </div>
                             </ItemTemplate>
-                        </asp:Repeater>
+                        </asp:ListView>
 
+                        <asp:DataPager ID="DataPager1" runat="server" PagedControlID="Listview1" class="col-md-12" PageSize="12">
+                            <Fields>
+                                <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn btn-dark" ShowFirstPageButton="True" ShowNextPageButton="true" ShowPreviousPageButton="False" />
+                                <asp:NumericPagerField />
+                                <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ButtonCssClass="btn btn-dark" ShowNextPageButton="true" ShowPreviousPageButton="False" />
+                            </Fields>
+                        </asp:DataPager>
                     </div>
                     <!-- /.row -->
 

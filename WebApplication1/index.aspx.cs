@@ -13,38 +13,98 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            String sql = "Select * from MatHang";  
-            Repeater1.DataSource = libraryweb.laydulieu(sql);
-            Repeater1.DataBind();
+            if (!IsPostBack)
+            {
+                dodulieu();
+
+                checkboxloaihang.DataTextField = "tenloaihang";
+                checkboxloaihang.DataValueField = "id";
+                checkboxloaihang.DataSource = libraryweb.laydulieu("Select * from loaihang");
+                checkboxloaihang.DataBind();
+            }
+
             if (Session["tendangnhap"] != null)
             {
                 login.Visible = false;
                 logout.Visible = true;
                 thongke.Visible = true;
             }
+
         }
 
         protected void dangnhap_Click(object sender, EventArgs e)
         {
-            String sql = "Select * from taikhoan where taikhoan = '" + tendangnhap.Text+"' and matkhau = '"+matkhau.Text+"'";
-            if(libraryweb.laydulieu(sql).Rows.Count == 1)
+            String sql = "Select * from taikhoan where taikhoan = '" + tendangnhap.Text + "' and matkhau = '" + matkhau.Text + "'";
+            if (libraryweb.laydulieu(sql).Rows.Count == 1)
             {
                 Session["tendangnhap"] = tendangnhap.Text;
                 login.Visible = false;
                 logout.Visible = true;
                 thongke.Visible = true;
-                Page_Load(sender, e);
+                Response.Redirect("index.aspx");
             }
         }
 
 
-        protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
+
+
+        protected void checkboxloaihang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String sql = "Select * from mathang where";
+            int first = 0;
+            int dem = 0;
+            foreach (ListItem i in checkboxloaihang.Items)
+            {
+                if (i.Selected == true)
+                {
+                    dem++;
+                    if (first == 0)
+                    {
+                        sql += " IDloaihang =" + i.Value.ToString();
+                        first++;
+                    }
+                    else
+                    {
+                        sql += " OR IDloaihang =" + i.Value.ToString();
+                    }
+                }
+            }
+            if (dem != 0)
+            {
+                Listview1.DataSource = libraryweb.laydulieu(sql);
+                Listview1.DataBind();
+            }
+            else
+            {
+                dodulieu();
+            }
+        }
+
+        public void dodulieu()
+        {
+            String sql = "Select * from MatHang";
+            Listview1.DataSource = libraryweb.laydulieu(sql);
+            Listview1.DataBind();
+        }
+
+        protected void tim_Click(object sender, EventArgs e)
+        {
+            Listview1.DataSource = libraryweb.laydulieu("Select * from mathang Where tenmathang like '%" + ten.Text + "%' and dongia >="+giatu.Text+" and dongia <="+giaden.Text);
+            Listview1.DataBind();
+        }
+
+        protected void Listview1_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
             HtmlGenericControl theDiv = e.Item.FindControl("theDiv") as HtmlGenericControl;
             if (Session["tendangnhap"] == null)
             {
                 theDiv.Visible = false;
             }
+        }
+
+        protected void Listview1_PagePropertiesChanged(object sender, EventArgs e)
+        {
+            dodulieu();
         }
     }
 }
