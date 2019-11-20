@@ -78,7 +78,10 @@ namespace RetailWin
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            String sql = String.Format("update mathang set IDloaihang = {0}, mavach = '{1}', tenmathang = '{2}', dongia = {3}, soluongton = '{4}' where Id = {5}", cbSuaLH.SelectedValue.ToString(), txtSuaMV.Text, txtSuaTMH.Text, txtSuaGMH.Text, txtSuaSL.Text, MaSuaMH);
+            liberyWin.ThemSuaXoaQuery(sql);
+            MessageBox.Show("Sửa thành công!", "Thông Báo");
+            LayMatHang();
         }
 
         private void dgvMatHang_CellClick(object sender, DataGridViewCellEventArgs e)

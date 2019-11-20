@@ -63,6 +63,12 @@
     <Compile Include="MatHang.Designer.cs">
       <DependentUpon>MatHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhapHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NhapHang.Designer.cs">
+      <DependentUpon>NhapHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrangChinh.cs">
@@ -79,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MatHang.resx">
       <DependentUpon>MatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhapHang.resx">
+      <DependentUpon>NhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

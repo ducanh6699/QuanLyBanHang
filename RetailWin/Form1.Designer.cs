@@ -28,13 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.nhapHang1 = new RetailWin.NhapHang();
             this.SuspendLayout();
+            // 
+            // nhapHang1
+            // 
+            this.nhapHang1.Location = new System.Drawing.Point(2, 0);
+            this.nhapHang1.Name = "nhapHang1";
+            this.nhapHang1.Size = new System.Drawing.Size(971, 573);
+            this.nhapHang1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 551);
+            this.ClientSize = new System.Drawing.Size(974, 571);
+            this.Controls.Add(this.nhapHang1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -43,6 +52,8 @@
         }
 
         #endregion
+
+        private NhapHang nhapHang1;
 
     }
 }
