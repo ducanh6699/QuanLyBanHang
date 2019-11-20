@@ -307,13 +307,13 @@
     <form id="form1" runat="server">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#">SHOP LÝ DO</a>
+                <a class="navbar-brand" href="index.aspx">SHOP LÝ DO</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home
+                        <a class="nav-link" href="index.aspx">Home
                                 <span class="sr-only">(current)</span>
                         </a>
                     </li>
@@ -343,7 +343,7 @@
                     </li>
 
                     <li class="nav-item" id="logout" visible="false" runat="server">
-                        <a class="nav-link" href="#">Đăng xuất</a>
+                        <a class="nav-link" href="dangxuat.aspx">Đăng xuất</a>
                     </li>
                 </ul>
             </div>
@@ -435,7 +435,7 @@
                                         <a href="#">
                                             <img class="card-img-top img-responsive img-fluid" src="img/<%#Eval("anhminhhoa")%>" style="height: 175px; width: 260px;"></a>
                                         <div class="card-body">
-                                            <h4 class="card-title" style="height: 50px;">
+                                            <h4 class="card-title" style="min-height:50px;">
                                                 <a href="#"><%#Eval("tenmathang")%></a>
                                             </h4>
                                             <h5><%#Eval("dongia")%>VND</h5>
@@ -449,7 +449,7 @@
                             </ItemTemplate>
                         </asp:ListView>
 
-                        <asp:DataPager ID="DataPager1" runat="server" PagedControlID="Listview1" class="col-md-12" PageSize="12">
+                        <asp:DataPager ID="DataPager1" runat="server" PagedControlID="Listview1" class="col-md-12" PageSize="6">
                             <Fields>
                                 <asp:NextPreviousPagerField ButtonType="Button" ButtonCssClass="btn btn-dark" ShowFirstPageButton="True" ShowNextPageButton="true" ShowPreviousPageButton="False" />
                                 <asp:NumericPagerField />

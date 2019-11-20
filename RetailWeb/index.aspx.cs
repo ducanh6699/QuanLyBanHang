@@ -43,6 +43,10 @@ namespace WebApplication1
                 thongke.Visible = true;
                 Response.Redirect("index.aspx");
             }
+            else
+            {
+                Response.Write("<script>alert('Sai tài khoản hoặc mật khẩu')</script>");
+            }
         }
 
 
@@ -72,10 +76,12 @@ namespace WebApplication1
             if (dem != 0)
             {
                 Listview1.DataSource = libraryweb.laydulieu(sql);
+                this.DataPager1.SetPageProperties((0) * this.DataPager1.PageSize, this.DataPager1.MaximumRows, false);
                 Listview1.DataBind();
             }
             else
             {
+                this.DataPager1.SetPageProperties((0) * this.DataPager1.PageSize, this.DataPager1.MaximumRows, false);
                 dodulieu();
             }
         }
@@ -89,7 +95,16 @@ namespace WebApplication1
 
         protected void tim_Click(object sender, EventArgs e)
         {
-            Listview1.DataSource = libraryweb.laydulieu("Select * from mathang Where tenmathang like '%" + ten.Text + "%' and dongia >="+giatu.Text+" and dongia <="+giaden.Text);
+            if (giatu.Text == "")
+            {
+                giatu.Text = "0";
+            }
+            if (giaden.Text == "")
+            {
+                giaden.Text = "100000";
+            }
+            Listview1.DataSource = libraryweb.laydulieu("Select * from mathang Where tenmathang like '%" + ten.Text + "%' and dongia >=" + giatu.Text + " and dongia <=" + giaden.Text);
+            this.DataPager1.SetPageProperties((0) * this.DataPager1.PageSize, this.DataPager1.MaximumRows, false);
             Listview1.DataBind();
         }
 

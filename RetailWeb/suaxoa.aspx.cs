@@ -60,11 +60,13 @@ namespace WebApplication1
                 string filename = fileUpload.FileName;
                 fileUpload.SaveAs(Server.MapPath("~/img/") + filename);
                 libraryweb.themsuaxoa("Update mathang set IDloaihang = " + loaihang.SelectedValue.ToString() + ", mavach ='" + mavach.Text + "', tenmathang='" + tenmathang.Text + "', soluongton='" + soluongton.Text + "', dongia ='" + dongia.Text + "', anhminhhoa='" + filename + "' Where id="+ Request.QueryString["id"].ToString());
+                Response.Write("<script>alert('Sửa thành công')</script>");
 
             }
             else
             {
                 libraryweb.themsuaxoa("Update mathang set IDloaihang = " + loaihang.SelectedValue.ToString() + ", mavach ='" + mavach.Text + "', tenmathang='" + tenmathang.Text + "', soluongton='" + soluongton.Text + "', dongia ='" + dongia.Text + "' Where id=" + Request.QueryString["id"].ToString());
+                Response.Write("<script>alert('Sửa thành công')</script>");
             }
         }
 

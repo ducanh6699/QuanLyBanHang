@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Thongke.aspx.cs" Inherits="WebApplication1.Thongke" %>
 
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -10,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Thống kê</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -30,7 +32,7 @@
                     <div class="sidebar-brand-icon rotate-n-15">
                         <i class="fas fa-laugh-wink"></i>
                     </div>
-                    <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                    <div class="sidebar-brand-text mx-3">Shop lý do <sup>2</sup></div>
                 </a>
 
                 <!-- Divider -->
@@ -40,7 +42,7 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="index.html">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard</span></a>
+                        <span>Thống kê</span></a>
                 </li>
 
                 <!-- Divider -->
@@ -50,7 +52,6 @@
 
 
 
-                <hr class="sidebar-divider">
 
                 <!-- Heading -->
 
@@ -58,25 +59,11 @@
 
                 <!-- Nav Item - Charts -->
                 <li class="nav-item">
-                    <a class="nav-link" href="charts.html">
-                        <i class="fas fa-fw fa-chart-area"></i>
-                        <span>Charts</span></a>
+                    <a class="nav-link" href="index.aspx">
+                        <i class="fas fa-fw fa-cart-arrow-down"></i>
+                        <span>Trang bán hàng</span></a>
                 </li>
 
-                <!-- Nav Item - Tables -->
-                <li class="nav-item">
-                    <a class="nav-link" href="tables.html">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>Tables</span></a>
-                </li>
-
-                <!-- Divider -->
-                <hr class="sidebar-divider d-none d-md-block">
-
-                <!-- Sidebar Toggler (Sidebar) -->
-                <div class="text-center d-none d-md-inline">
-                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                </div>
 
             </ul>
             <!-- End of Sidebar -->
@@ -124,27 +111,14 @@
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
                                     <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
                                 </a>
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Profile
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Settings
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Activity Log
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Logout
+                                        Đăng xuất
                                     </a>
                                 </div>
                             </li>
@@ -158,10 +132,6 @@
                     <div class="container-fluid">
 
                         <!-- Page Heading -->
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>Generate Report</a>
-                        </div>
 
                         <!-- Content Row -->
                         <div class="row">
@@ -172,8 +142,11 @@
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Earnings (Monthly)</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Tổng thu (Hôm nay)</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                    <asp:Label ID="labelngay" runat="server" Text=""></asp:Label>
+
+                                                </div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -189,8 +162,10 @@
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings (Annual)</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Tổng thu (Tháng này)</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                    <asp:Label ID="label1thang" runat="server" Text=""></asp:Label>
+                                                </div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -206,14 +181,11 @@
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Chỉ tiêu hôm nay</div>
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col-auto">
-                                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="progress progress-sm mr-2">
-                                                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                                            <asp:Label ID="labelchitieungay" runat="server" Text=""></asp:Label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -232,8 +204,10 @@
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Chỉ tiêu tháng này</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                    <asp:Label ID="labelchitieuthang" runat="server" Text=""></asp:Label>
+                                                </div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -242,6 +216,43 @@
                                     </div>
                                 </div>
                             </div>
+
+
+
+
+                            <div class="panel panel-default col-md-8" style="overflow: scroll;">
+                                <div class="panel-heading">Biểu đồ thu nhập theo tháng</div>
+                                <div class="panel-body">
+                                    <asp:Chart ID="Chartthunhap" runat="server" Width="1000px">
+                                        <Series>
+                                            <asp:Series XValueMember="ngaytao" YValueMembers="SumOftongtien" Name="Series1" ChartType="FastLine" YValuesPerPoint="2"></asp:Series>
+                                        </Series>
+                                        <ChartAreas>
+                                            <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
+                                        </ChartAreas>
+                                    </asp:Chart>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default col-md-4">
+                                <div class="panel-heading">Hàng sắp hết</div>
+                                <div class="panel-body">
+                                    <asp:GridView Width="100%" ID="hangsaphet" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+                                        <AlternatingRowStyle BackColor="White" />
+                                        <EditRowStyle BackColor="#7C6F57" />
+                                        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                                        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                                        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                                        <RowStyle BackColor="#E3EAEB" />
+                                        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                                        <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                                        <SortedAscendingHeaderStyle BackColor="#246B61" />
+                                        <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                                        <SortedDescendingHeaderStyle BackColor="#15524A" />
+                                    </asp:GridView>
+                                </div>
+                            </div>
+
                         </div>
 
                         <!-- Content Row -->
