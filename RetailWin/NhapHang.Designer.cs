@@ -55,6 +55,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtSuaTon = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtThemTon = new System.Windows.Forms.TextBox();
             this.MaNhapHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaMatHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngaynhaphang = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +66,7 @@
             this.TenMatHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaVach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluongton = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dvgXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage2.SuspendLayout();
@@ -72,21 +77,21 @@
             // 
             // txtSuaDG
             // 
-            this.txtSuaDG.Location = new System.Drawing.Point(126, 156);
+            this.txtSuaDG.Location = new System.Drawing.Point(126, 129);
             this.txtSuaDG.Name = "txtSuaDG";
             this.txtSuaDG.Size = new System.Drawing.Size(828, 20);
             this.txtSuaDG.TabIndex = 20;
             // 
             // txtSuaMV
             // 
-            this.txtSuaMV.Location = new System.Drawing.Point(126, 128);
+            this.txtSuaMV.Location = new System.Drawing.Point(126, 101);
             this.txtSuaMV.Name = "txtSuaMV";
             this.txtSuaMV.Size = new System.Drawing.Size(828, 20);
             this.txtSuaMV.TabIndex = 18;
             // 
             // txtSuaSLN
             // 
-            this.txtSuaSLN.Location = new System.Drawing.Point(126, 102);
+            this.txtSuaSLN.Location = new System.Drawing.Point(126, 75);
             this.txtSuaSLN.Name = "txtSuaSLN";
             this.txtSuaSLN.Size = new System.Drawing.Size(828, 20);
             this.txtSuaSLN.TabIndex = 16;
@@ -95,7 +100,7 @@
             // 
             this.cbSuaMH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSuaMH.FormattingEnabled = true;
-            this.cbSuaMH.Location = new System.Drawing.Point(126, 75);
+            this.cbSuaMH.Location = new System.Drawing.Point(126, 48);
             this.cbSuaMH.Name = "cbSuaMH";
             this.cbSuaMH.Size = new System.Drawing.Size(828, 21);
             this.cbSuaMH.TabIndex = 14;
@@ -115,6 +120,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.txtSuaTon);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.label9);
@@ -135,7 +142,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(34, 158);
+            this.label6.Location = new System.Drawing.Point(34, 132);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 13);
             this.label6.TabIndex = 8;
@@ -143,7 +150,7 @@
             // 
             // txtThemDG
             // 
-            this.txtThemDG.Location = new System.Drawing.Point(126, 155);
+            this.txtThemDG.Location = new System.Drawing.Point(126, 129);
             this.txtThemDG.Name = "txtThemDG";
             this.txtThemDG.Size = new System.Drawing.Size(828, 20);
             this.txtThemDG.TabIndex = 7;
@@ -151,7 +158,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 104);
+            this.label5.Location = new System.Drawing.Point(34, 78);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 13);
             this.label5.TabIndex = 6;
@@ -178,9 +185,10 @@
             this.TenMatHang,
             this.MaVach,
             this.DonGia,
+            this.soluongton,
             this.dgvSua,
             this.dvgXoa});
-            this.dgvNhapHang.Location = new System.Drawing.Point(4, 41);
+            this.dgvNhapHang.Location = new System.Drawing.Point(5, 51);
             this.dgvNhapHang.Name = "dgvNhapHang";
             this.dgvNhapHang.Size = new System.Drawing.Size(965, 212);
             this.dgvNhapHang.TabIndex = 6;
@@ -190,7 +198,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(-2, 6);
+            this.label2.Location = new System.Drawing.Point(-1, 16);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(280, 32);
@@ -199,7 +207,7 @@
             // 
             // txtThemSL
             // 
-            this.txtThemSL.Location = new System.Drawing.Point(126, 101);
+            this.txtThemSL.Location = new System.Drawing.Point(126, 75);
             this.txtThemSL.Name = "txtThemSL";
             this.txtThemSL.Size = new System.Drawing.Size(828, 20);
             this.txtThemSL.TabIndex = 5;
@@ -207,7 +215,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 130);
+            this.label4.Location = new System.Drawing.Point(34, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 4;
@@ -217,7 +225,7 @@
             // 
             this.cbThemMH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbThemMH.FormattingEnabled = true;
-            this.cbThemMH.Location = new System.Drawing.Point(126, 74);
+            this.cbThemMH.Location = new System.Drawing.Point(126, 48);
             this.cbThemMH.Name = "cbThemMH";
             this.cbThemMH.Size = new System.Drawing.Size(828, 21);
             this.cbThemMH.TabIndex = 3;
@@ -237,7 +245,7 @@
             // 
             // txtThemMV
             // 
-            this.txtThemMV.Location = new System.Drawing.Point(126, 127);
+            this.txtThemMV.Location = new System.Drawing.Point(126, 101);
             this.txtThemMV.Name = "txtThemMV";
             this.txtThemMV.Size = new System.Drawing.Size(828, 20);
             this.txtThemMV.TabIndex = 1;
@@ -245,7 +253,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 77);
+            this.label3.Location = new System.Drawing.Point(34, 51);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 0;
@@ -255,7 +263,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-2, 271);
+            this.label1.Location = new System.Drawing.Point(-5, 278);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(272, 32);
@@ -264,6 +272,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.txtThemTon);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.txtThemDG);
             this.tabPage1.Controls.Add(this.label5);
@@ -285,7 +295,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(4, 306);
+            this.tabControl1.Location = new System.Drawing.Point(1, 313);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(968, 260);
@@ -294,7 +304,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(36, 159);
+            this.label7.Location = new System.Drawing.Point(34, 132);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 13);
             this.label7.TabIndex = 24;
@@ -303,7 +313,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(36, 105);
+            this.label8.Location = new System.Drawing.Point(34, 78);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 13);
             this.label8.TabIndex = 23;
@@ -312,7 +322,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(36, 131);
+            this.label9.Location = new System.Drawing.Point(34, 104);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(49, 13);
             this.label9.TabIndex = 22;
@@ -321,11 +331,43 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(36, 78);
+            this.label10.Location = new System.Drawing.Point(34, 51);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(52, 13);
             this.label10.TabIndex = 21;
             this.label10.Text = "Mặt hàng";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(34, 158);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(67, 13);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Số lượng tồn";
+            // 
+            // txtSuaTon
+            // 
+            this.txtSuaTon.Location = new System.Drawing.Point(126, 155);
+            this.txtSuaTon.Name = "txtSuaTon";
+            this.txtSuaTon.Size = new System.Drawing.Size(828, 20);
+            this.txtSuaTon.TabIndex = 25;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(34, 158);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 13);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "Số lượng tồn";
+            // 
+            // txtThemTon
+            // 
+            this.txtThemTon.Location = new System.Drawing.Point(126, 155);
+            this.txtThemTon.Name = "txtThemTon";
+            this.txtThemTon.Size = new System.Drawing.Size(828, 20);
+            this.txtThemTon.TabIndex = 27;
             // 
             // MaNhapHang
             // 
@@ -382,6 +424,14 @@
             this.DonGia.Name = "DonGia";
             this.DonGia.ReadOnly = true;
             this.DonGia.Width = 130;
+            // 
+            // soluongton
+            // 
+            this.soluongton.DataPropertyName = "soluongton";
+            this.soluongton.HeaderText = "Số lượng tồn";
+            this.soluongton.Name = "soluongton";
+            this.soluongton.ReadOnly = true;
+            this.soluongton.Width = 120;
             // 
             // dgvSua
             // 
@@ -449,6 +499,10 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtSuaTon;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtThemTon;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNhapHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaMatHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaynhaphang;
@@ -456,6 +510,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenMatHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaVach;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soluongton;
         private System.Windows.Forms.DataGridViewButtonColumn dgvSua;
         private System.Windows.Forms.DataGridViewButtonColumn dvgXoa;
     }

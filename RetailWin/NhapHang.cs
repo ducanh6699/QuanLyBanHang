@@ -32,7 +32,7 @@ namespace RetailWin
 
         private void LayNhapHang()
         {
-            String sql = @"SELECT nhaphang.ngaynhaphang, nhaphang.soluong, mathang.tenmathang, mathang.mavach, mathang.dongia, nhaphang.ID, mathang.ID
+            String sql = @"SELECT nhaphang.ngaynhaphang, nhaphang.soluong, mathang.tenmathang, mathang.mavach, mathang.dongia, mathang.soluongton, nhaphang.ID, mathang.ID
                             FROM mathang INNER JOIN nhaphang ON mathang.ID = nhaphang.IDmathang;";
             DataTable dt = new DataTable();
             dt = liberyWin.XemQuery(sql);
@@ -49,21 +49,39 @@ namespace RetailWin
             cbThemMH.DataSource = tb;
             cbThemMH.DisplayMember = "tenmathang";
             cbThemMH.ValueMember = "ID";
+            cbThemMH.SelectedIndexChanged += cbThemMH_SelectedIndexChanged;
 
-            cbSuaMH.DataSource = tb;
-            cbSuaMH.DisplayMember = "tenloaihang";
+            sql = "select * from mathang";
+            DataTable dt = new DataTable();
+            dt = liberyWin.XemQuery(sql);
+            cbSuaMH.DataSource = dt;
+            cbSuaMH.DisplayMember = "tenmathang";
             cbSuaMH.ValueMember = "ID";
-
+            cbSuaMH.SelectedIndexChanged += cbSuaMH_SelectedIndexChanged;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-
+            if (liberyWin.confirm())
+            {
+                String sql = String.Format("insert into nhaphang (ID,IDmathang,soluong,ngaynhaphang) values({0},{1},'{2}','{3}')", MaNH, cbThemMH.SelectedValue.ToString(), txtThemSL.Text, DateTime.Now.ToString());
+                liberyWin.ThemSuaXoaQuery(sql);
+                liberyWin.ThemSuaXoaQuery(String.Format("update mathang set soluongton = '{0}' where ID = {1}", int.Parse(txtThemSL.Text) + int.Parse(txtThemTon.Text), cbThemMH.SelectedValue.ToString()));
+                MessageBox.Show("Đã thêm thành công!", "Thông báo");
+                TaoMaNhapHang();
+                LayNhapHang();
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            if (liberyWin.confirm())
+            {
+                //String sql = String.Format("update mathang set IDloaihang = {0}, mavach = '{1}', tenmathang = '{2}', dongia = {3}, soluongton = '{4}' where Id = {5}", cbSuaLH.SelectedValue.ToString(), txtSuaMV.Text, txtSuaTMH.Text, txtSuaGMH.Text, txtSuaSL.Text, MaSuaMH);
+                //liberyWin.ThemSuaXoaQuery(sql);
+                //MessageBox.Show("Sửa thành công!", "Thông Báo");
+                //LayMatHang();
+            }
         }
 
         private void NhapHang_Load(object sender, EventArgs e)
@@ -75,7 +93,44 @@ namespace RetailWin
 
         private void dgvNhapHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if (e.ColumnIndex == 0 && e.RowIndex != -1) // bấm nút sửa trên dgv
+            {
+                MaSuaNH = dgvNhapHang.Rows[e.RowIndex].Cells[2].Value.ToString();
+                cbSuaMH.SelectedValue = dgvNhapHang.Rows[e.RowIndex].Cells[9].Value.ToString();
+                txtSuaMV.Text = dgvNhapHang.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txtSuaDG.Text = dgvNhapHang.Rows[e.RowIndex].Cells[6].Value.ToString();
+                txtSuaSLN.Text = dgvNhapHang.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtSuaTon.Text = dgvNhapHang.Rows[e.RowIndex].Cells[7].Value.ToString();
+                tabControl1.SelectedTab = tabPage2;
+            }
+            else if (e.ColumnIndex == 1 && e.RowIndex != -1) // bấm nút xóa trên dgv
+            {
+                if (liberyWin.confirm())
+                {
+                    String sql = String.Format("delete from mathang where ID = {0}", dgvNhapHang.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    liberyWin.ThemSuaXoaQuery(sql);
+                    MessageBox.Show("Xóa Thành Công!", "Thông Báo");
+                    TaoMaNhapHang();
+                    LayNhapHang();
+                    tabControl1.SelectedTab = tabPage1;
+                }
+            }
+        }
+
+        private void cbSuaMH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataTable dt = liberyWin.XemQuery(String.Format("select * from mathang where ID = {0}", cbSuaMH.SelectedValue.ToString()));
+            txtSuaMV.Text = dt.Rows[0]["mavach"].ToString();
+            txtSuaDG.Text = dt.Rows[0]["dongia"].ToString();
+            txtSuaTon.Text = dt.Rows[0]["soluongton"].ToString();
+        }
+
+        private void cbThemMH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataTable dt = liberyWin.XemQuery(String.Format("select * from mathang where ID = {0}", cbThemMH.SelectedValue.ToString()));
+            txtThemMV.Text = dt.Rows[0]["mavach"].ToString();
+            txtThemDG.Text = dt.Rows[0]["dongia"].ToString();
+            txtThemTon.Text = dt.Rows[0]["soluongton"].ToString();
         }
     }
 }

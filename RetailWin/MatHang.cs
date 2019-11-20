@@ -57,7 +57,10 @@ namespace RetailWin
             cbThemLoaiHang.DisplayMember = "tenloaihang";
             cbThemLoaiHang.ValueMember = "ID";
 
-            cbSuaLH.DataSource = tb;
+            sql = "select * from loaihang";
+            DataTable dt = new DataTable();
+            dt = liberyWin.XemQuery(sql);
+            cbSuaLH.DataSource = dt;
             cbSuaLH.DisplayMember = "tenloaihang";
             cbSuaLH.ValueMember = "ID";
 
@@ -78,10 +81,13 @@ namespace RetailWin
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            String sql = String.Format("update mathang set IDloaihang = {0}, mavach = '{1}', tenmathang = '{2}', dongia = {3}, soluongton = '{4}' where Id = {5}", cbSuaLH.SelectedValue.ToString(), txtSuaMV.Text, txtSuaTMH.Text, txtSuaGMH.Text, txtSuaSL.Text, MaSuaMH);
-            liberyWin.ThemSuaXoaQuery(sql);
-            MessageBox.Show("Sửa thành công!", "Thông Báo");
-            LayMatHang();
+            if (liberyWin.confirm())
+            {
+                String sql = String.Format("update mathang set IDloaihang = {0}, mavach = '{1}', tenmathang = '{2}', dongia = {3}, soluongton = '{4}' where Id = {5}", cbSuaLH.SelectedValue.ToString(), txtSuaMV.Text, txtSuaTMH.Text, txtSuaGMH.Text, txtSuaSL.Text, MaSuaMH);
+                liberyWin.ThemSuaXoaQuery(sql);
+                MessageBox.Show("Sửa thành công!", "Thông Báo");
+                LayMatHang();
+            }
         }
 
         private void dgvMatHang_CellClick(object sender, DataGridViewCellEventArgs e)

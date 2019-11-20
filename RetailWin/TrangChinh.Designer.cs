@@ -30,9 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChinh));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flpbtnchucnang = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.matHang1 = new RetailWin.MatHang();
+            this.nhapHang1 = new RetailWin.NhapHang();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -54,20 +55,11 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainer1.Panel2.BackgroundImage")));
+            this.splitContainer1.Panel2.Controls.Add(this.nhapHang1);
             this.splitContainer1.Panel2.Controls.Add(this.matHang1);
             this.splitContainer1.Size = new System.Drawing.Size(1186, 579);
             this.splitContainer1.SplitterDistance = 205;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 116);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // flpbtnchucnang
             // 
@@ -79,6 +71,16 @@
             this.flpbtnchucnang.Size = new System.Drawing.Size(200, 459);
             this.flpbtnchucnang.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(199, 116);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // matHang1
             // 
             this.matHang1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -87,6 +89,14 @@
             this.matHang1.Size = new System.Drawing.Size(971, 573);
             this.matHang1.TabIndex = 0;
             this.matHang1.Visible = false;
+            // 
+            // nhapHang1
+            // 
+            this.nhapHang1.Location = new System.Drawing.Point(6, 3);
+            this.nhapHang1.Name = "nhapHang1";
+            this.nhapHang1.Size = new System.Drawing.Size(971, 573);
+            this.nhapHang1.TabIndex = 1;
+            this.nhapHang1.Visible = false;
             // 
             // TrangChinh
             // 
@@ -114,5 +124,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpbtnchucnang;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MatHang matHang1;
+        private NhapHang nhapHang1;
     }
 }

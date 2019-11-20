@@ -48,13 +48,14 @@ namespace RetailWin
             switch (btn.Text)
             {
                 case "Mặt hàng":
+                    nhapHang1.Hide();
                     matHang1.Show();
                     break;
 
-                //case "Danh sách người dùng":
-                //    DSTaiKhoan DSTaiKhoan = new DSTaiKhoan();
-                //    DSTaiKhoan.ShowDialog();
-                //    break;
+                case "Nhập hàng":
+                    matHang1.Hide();
+                    nhapHang1.Show();
+                    break;
 
                 //case "Danh sách phòng":
                 //    DSPhong DSPhong = new DSPhong();
