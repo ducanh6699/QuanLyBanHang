@@ -1,0 +1,11 @@
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWin\bin\Debug\RetailWin.exe.config
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWin\bin\Debug\RetailWin.exe
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWin\bin\Debug\RetailWin.pdb
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWin\obj\Debug\RetailWin.Properties.Resources.resources
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWin\obj\Debug\RetailWin.csproj.GenerateResource.Cache
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWin\obj\Debug\RetailWin.exe
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWin\obj\Debug\RetailWin.pdb
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWin\obj\Debug\RetailWin.DangNhap.resources
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWin\obj\Debug\RetailWin.TrangChinh.resources
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWin\obj\Debug\RetailWin.MatHang.resources
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWin\obj\Debug\RetailWin.Form1.resources
