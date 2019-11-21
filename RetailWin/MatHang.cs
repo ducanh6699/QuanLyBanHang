@@ -19,7 +19,7 @@ namespace RetailWin
 
         String MaMH, MaSuaMH;
 
-        private void MatHang_Load(object sender, EventArgs e)
+        public void MatHang_Load(object sender, EventArgs e)
         {
             LayMatHang();
             LayLoaiHang();

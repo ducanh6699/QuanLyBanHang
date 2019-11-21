@@ -50,6 +50,7 @@ namespace RetailWin
                 case "Mặt hàng":
                     nhapHang1.Hide();
                     matHang1.Show();
+                    matHang1.MatHang_Load(sender,e);
                     break;
 
                 case "Nhập hàng":
