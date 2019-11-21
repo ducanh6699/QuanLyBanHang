@@ -32,21 +32,30 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatHang));
             this.label2 = new System.Windows.Forms.Label();
             this.dgvMatHang = new System.Windows.Forms.DataGridView();
+            this.MaMatHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLoaiHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaVach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoaiHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenMatHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSua = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dvgXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtThemTMH = new System.Windows.Forms.TextBox();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.cbThemLoaiHang = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtThemMV = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtThemGMH = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtThemSL = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtThemGMH = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtThemMV = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbThemLoaiHang = new System.Windows.Forms.ComboBox();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.txtThemTMH = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.txtSuaSL = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -58,15 +67,6 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.txtSuaTMH = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.MaMatHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLoaiHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaVach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLoaiHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenMatHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvSua = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dvgXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMatHang)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -113,6 +113,78 @@
             this.dgvMatHang.TabIndex = 2;
             this.dgvMatHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatHang_CellClick);
             // 
+            // MaMatHang
+            // 
+            this.MaMatHang.DataPropertyName = "ID";
+            this.MaMatHang.HeaderText = "MaMatHang";
+            this.MaMatHang.Name = "MaMatHang";
+            this.MaMatHang.Visible = false;
+            // 
+            // MaLoaiHang
+            // 
+            this.MaLoaiHang.DataPropertyName = "IDloaihang";
+            this.MaLoaiHang.HeaderText = "MaLoaiHang";
+            this.MaLoaiHang.Name = "MaLoaiHang";
+            this.MaLoaiHang.Visible = false;
+            // 
+            // MaVach
+            // 
+            this.MaVach.DataPropertyName = "mavach";
+            this.MaVach.HeaderText = "Mã vạch";
+            this.MaVach.Name = "MaVach";
+            this.MaVach.ReadOnly = true;
+            this.MaVach.Width = 135;
+            // 
+            // TenLoaiHang
+            // 
+            this.TenLoaiHang.DataPropertyName = "tenloaihang";
+            this.TenLoaiHang.HeaderText = "Loại hàng";
+            this.TenLoaiHang.Name = "TenLoaiHang";
+            this.TenLoaiHang.ReadOnly = true;
+            this.TenLoaiHang.Width = 130;
+            // 
+            // TenMatHang
+            // 
+            this.TenMatHang.DataPropertyName = "tenmathang";
+            this.TenMatHang.HeaderText = "Tên mặt hàng";
+            this.TenMatHang.Name = "TenMatHang";
+            this.TenMatHang.ReadOnly = true;
+            this.TenMatHang.Width = 177;
+            // 
+            // DonGia
+            // 
+            this.DonGia.DataPropertyName = "dongia";
+            this.DonGia.HeaderText = "Giá mặt hàng";
+            this.DonGia.Name = "DonGia";
+            this.DonGia.ReadOnly = true;
+            this.DonGia.Width = 130;
+            // 
+            // SoLuongTon
+            // 
+            this.SoLuongTon.DataPropertyName = "soluongton";
+            this.SoLuongTon.HeaderText = "Số lượng còn lại";
+            this.SoLuongTon.Name = "SoLuongTon";
+            this.SoLuongTon.ReadOnly = true;
+            this.SoLuongTon.Width = 130;
+            // 
+            // dgvSua
+            // 
+            this.dgvSua.HeaderText = "Sửa";
+            this.dgvSua.Name = "dgvSua";
+            this.dgvSua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSua.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgvSua.Text = "Sửa";
+            this.dgvSua.UseColumnTextForButtonValue = true;
+            // 
+            // dvgXoa
+            // 
+            this.dvgXoa.HeaderText = "Xóa";
+            this.dvgXoa.Name = "dvgXoa";
+            this.dvgXoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgXoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dvgXoa.Text = "Xóa";
+            this.dvgXoa.UseColumnTextForButtonValue = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -155,6 +227,103 @@
             this.tabPage1.Text = "Thêm mặt hàng";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(27, 156);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 15);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Số lượng còn lại";
+            // 
+            // txtThemSL
+            // 
+            this.txtThemSL.Enabled = false;
+            this.txtThemSL.Location = new System.Drawing.Point(126, 153);
+            this.txtThemSL.Name = "txtThemSL";
+            this.txtThemSL.Size = new System.Drawing.Size(828, 22);
+            this.txtThemSL.TabIndex = 9;
+            this.txtThemSL.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(27, 128);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 15);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Giá mặt hàng";
+            // 
+            // txtThemGMH
+            // 
+            this.txtThemGMH.Location = new System.Drawing.Point(126, 125);
+            this.txtThemGMH.Name = "txtThemGMH";
+            this.txtThemGMH.Size = new System.Drawing.Size(828, 22);
+            this.txtThemGMH.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(27, 43);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 15);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Mã vạch";
+            // 
+            // txtThemMV
+            // 
+            this.txtThemMV.Location = new System.Drawing.Point(126, 40);
+            this.txtThemMV.Name = "txtThemMV";
+            this.txtThemMV.Size = new System.Drawing.Size(828, 22);
+            this.txtThemMV.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(27, 100);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 15);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Tên mặt hàng";
+            // 
+            // cbThemLoaiHang
+            // 
+            this.cbThemLoaiHang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbThemLoaiHang.FormattingEnabled = true;
+            this.cbThemLoaiHang.Location = new System.Drawing.Point(126, 68);
+            this.cbThemLoaiHang.Name = "cbThemLoaiHang";
+            this.cbThemLoaiHang.Size = new System.Drawing.Size(828, 23);
+            this.cbThemLoaiHang.TabIndex = 3;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(879, 181);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 32);
+            this.btnThem.TabIndex = 2;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // txtThemTMH
+            // 
+            this.txtThemTMH.Location = new System.Drawing.Point(126, 97);
+            this.txtThemTMH.Name = "txtThemTMH";
+            this.txtThemTMH.Size = new System.Drawing.Size(828, 22);
+            this.txtThemTMH.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 71);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "loại hàng";
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.label8);
@@ -175,101 +344,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Sửa mặt hàng";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 71);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "loại hàng";
-            // 
-            // txtThemTMH
-            // 
-            this.txtThemTMH.Location = new System.Drawing.Point(126, 97);
-            this.txtThemTMH.Name = "txtThemTMH";
-            this.txtThemTMH.Size = new System.Drawing.Size(828, 22);
-            this.txtThemTMH.TabIndex = 1;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(879, 181);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 32);
-            this.btnThem.TabIndex = 2;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // cbThemLoaiHang
-            // 
-            this.cbThemLoaiHang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbThemLoaiHang.FormattingEnabled = true;
-            this.cbThemLoaiHang.Location = new System.Drawing.Point(126, 68);
-            this.cbThemLoaiHang.Name = "cbThemLoaiHang";
-            this.cbThemLoaiHang.Size = new System.Drawing.Size(828, 23);
-            this.cbThemLoaiHang.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 100);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 15);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Tên mặt hàng";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 43);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 15);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Mã vạch";
-            // 
-            // txtThemMV
-            // 
-            this.txtThemMV.Location = new System.Drawing.Point(126, 40);
-            this.txtThemMV.Name = "txtThemMV";
-            this.txtThemMV.Size = new System.Drawing.Size(828, 22);
-            this.txtThemMV.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 128);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 15);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Giá mặt hàng";
-            // 
-            // txtThemGMH
-            // 
-            this.txtThemGMH.Location = new System.Drawing.Point(126, 125);
-            this.txtThemGMH.Name = "txtThemGMH";
-            this.txtThemGMH.Size = new System.Drawing.Size(828, 22);
-            this.txtThemGMH.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 156);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 15);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Số lượng còn lại";
-            // 
-            // txtThemSL
-            // 
-            this.txtThemSL.Location = new System.Drawing.Point(126, 153);
-            this.txtThemSL.Name = "txtThemSL";
-            this.txtThemSL.Size = new System.Drawing.Size(828, 22);
-            this.txtThemSL.TabIndex = 9;
             // 
             // label8
             // 
@@ -365,78 +439,6 @@
             this.label12.Size = new System.Drawing.Size(56, 15);
             this.label12.TabIndex = 11;
             this.label12.Text = "loại hàng";
-            // 
-            // MaMatHang
-            // 
-            this.MaMatHang.DataPropertyName = "ID";
-            this.MaMatHang.HeaderText = "MaMatHang";
-            this.MaMatHang.Name = "MaMatHang";
-            this.MaMatHang.Visible = false;
-            // 
-            // MaLoaiHang
-            // 
-            this.MaLoaiHang.DataPropertyName = "IDloaihang";
-            this.MaLoaiHang.HeaderText = "MaLoaiHang";
-            this.MaLoaiHang.Name = "MaLoaiHang";
-            this.MaLoaiHang.Visible = false;
-            // 
-            // MaVach
-            // 
-            this.MaVach.DataPropertyName = "mavach";
-            this.MaVach.HeaderText = "Mã vạch";
-            this.MaVach.Name = "MaVach";
-            this.MaVach.ReadOnly = true;
-            this.MaVach.Width = 135;
-            // 
-            // TenLoaiHang
-            // 
-            this.TenLoaiHang.DataPropertyName = "tenloaihang";
-            this.TenLoaiHang.HeaderText = "Loại hàng";
-            this.TenLoaiHang.Name = "TenLoaiHang";
-            this.TenLoaiHang.ReadOnly = true;
-            this.TenLoaiHang.Width = 130;
-            // 
-            // TenMatHang
-            // 
-            this.TenMatHang.DataPropertyName = "tenmathang";
-            this.TenMatHang.HeaderText = "Tên mặt hàng";
-            this.TenMatHang.Name = "TenMatHang";
-            this.TenMatHang.ReadOnly = true;
-            this.TenMatHang.Width = 177;
-            // 
-            // DonGia
-            // 
-            this.DonGia.DataPropertyName = "dongia";
-            this.DonGia.HeaderText = "Giá mặt hàng";
-            this.DonGia.Name = "DonGia";
-            this.DonGia.ReadOnly = true;
-            this.DonGia.Width = 130;
-            // 
-            // SoLuongTon
-            // 
-            this.SoLuongTon.DataPropertyName = "soluongton";
-            this.SoLuongTon.HeaderText = "Số lượng còn lại";
-            this.SoLuongTon.Name = "SoLuongTon";
-            this.SoLuongTon.ReadOnly = true;
-            this.SoLuongTon.Width = 130;
-            // 
-            // dgvSua
-            // 
-            this.dgvSua.HeaderText = "Sửa";
-            this.dgvSua.Name = "dgvSua";
-            this.dgvSua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSua.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dgvSua.Text = "Sửa";
-            this.dgvSua.UseColumnTextForButtonValue = true;
-            // 
-            // dvgXoa
-            // 
-            this.dvgXoa.HeaderText = "Xóa";
-            this.dvgXoa.Name = "dvgXoa";
-            this.dvgXoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dvgXoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dvgXoa.Text = "Xóa";
-            this.dvgXoa.UseColumnTextForButtonValue = true;
             // 
             // MatHang
             // 

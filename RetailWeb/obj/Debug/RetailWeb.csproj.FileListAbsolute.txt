@@ -195,3 +195,36 @@ E:\Winform project\QuanLyBanHang\QLKS\RetailWeb\bin\Microsoft.AI.Web.xml
 E:\Winform project\QuanLyBanHang\QLKS\RetailWeb\bin\Microsoft.AI.WindowsServer.xml
 E:\Winform project\QuanLyBanHang\QLKS\RetailWeb\bin\Microsoft.ApplicationInsights.xml
 E:\Winform project\QuanLyBanHang\QLKS\RetailWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\ApplicationInsights.config
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\roslyn\csc.exe
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\roslyn\System.Collections.Immutable.dll
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\roslyn\System.Reflection.Metadata.dll
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\roslyn\vbc.exe
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\roslyn\VBCSCompiler.exe
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\roslyn\VBCSCompiler.exe.config
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\WebApplication1.dll.config
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\WebApplication1.dll
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\WebApplication1.pdb
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\Microsoft.AI.Agent.Intercept.dll
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\Microsoft.AI.DependencyCollector.dll
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\Microsoft.AI.Web.dll
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\Microsoft.AI.WindowsServer.dll
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\Microsoft.ApplicationInsights.dll
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\Microsoft.AI.DependencyCollector.xml
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\Microsoft.AI.Web.xml
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\Microsoft.AI.WindowsServer.xml
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\Microsoft.ApplicationInsights.xml
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\obj\Debug\RetailWeb.csprojResolveAssemblyReference.cache
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\obj\Debug\WebApplication1.dll
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWeb\obj\Debug\WebApplication1.pdb

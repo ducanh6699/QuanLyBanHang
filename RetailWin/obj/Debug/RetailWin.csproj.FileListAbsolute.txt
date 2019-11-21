@@ -11,3 +11,4 @@ D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWin\obj\Debug\RetailWin
 D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWin\obj\Debug\RetailWin.Form1.resources
 D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWin\obj\Debug\RetailWin.csprojResolveAssemblyReference.cache
 D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWin\obj\Debug\RetailWin.NhapHang.resources
+D:\All File\Quan Ly Ban Hang ASP.NET\QuanLyBanHang\RetailWin\obj\Debug\RetailWin.HoaDon.resources

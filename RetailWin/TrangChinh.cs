@@ -50,23 +50,34 @@ namespace RetailWin
                 case "Mặt hàng":
                     nhapHang1.Hide();
                     matHang1.Show();
+                    hoaDon1.Hide();
                     matHang1.MatHang_Load(sender,e);
                     break;
 
                 case "Nhập hàng":
                     matHang1.Hide();
                     nhapHang1.Show();
+                    hoaDon1.Hide();
+                    nhapHang1.NhapHang_Load(sender, e);
                     break;
 
-                //case "Danh sách phòng":
-                //    DSPhong DSPhong = new DSPhong();
-                //    DSPhong.ShowDialog();
-                //    break;
+                case "Hóa đơn":
+                    hoaDon1.Show();
+                    matHang1.Hide();
+                    nhapHang1.Hide();
+                    hoaDon1.HoaDon_Load(sender, e);
+                    break;
 
-                //case "Danh sách hóa đơn":
-                //    DSHoaDon DSHoaDon = new DSHoaDon();
-                //    DSHoaDon.ShowDialog();
-                //    break;
+                case "Thoát chương trình":
+                    liberyWin.Thoat();
+                    break;
+
+                case "Đăng xuất":
+                    liberyWin.ChucNangCuaNguoiDung = "";
+                    DangNhap DangNhap = new DangNhap();
+                    DangNhap.Show();
+                    this.Close();
+                    break;
 
                 default:
                     MessageBox.Show("Chức năng này đang phát triển", "Thông báo");

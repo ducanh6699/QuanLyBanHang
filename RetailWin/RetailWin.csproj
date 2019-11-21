@@ -56,6 +56,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HoaDon.Designer.cs">
+      <DependentUpon>HoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="liberyWin.cs" />
     <Compile Include="MatHang.cs">
       <SubType>UserControl</SubType>
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoaDon.resx">
+      <DependentUpon>HoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MatHang.resx">
       <DependentUpon>MatHang.cs</DependentUpon>

@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nhapHang1 = new RetailWin.NhapHang();
+            this.hoaDon1 = new RetailWin.HoaDon();
             this.SuspendLayout();
             // 
-            // nhapHang1
+            // hoaDon1
             // 
-            this.nhapHang1.Location = new System.Drawing.Point(2, 0);
-            this.nhapHang1.Name = "nhapHang1";
-            this.nhapHang1.Size = new System.Drawing.Size(971, 573);
-            this.nhapHang1.TabIndex = 0;
+            this.hoaDon1.Location = new System.Drawing.Point(2, -1);
+            this.hoaDon1.Name = "hoaDon1";
+            this.hoaDon1.Size = new System.Drawing.Size(971, 573);
+            this.hoaDon1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 571);
-            this.Controls.Add(this.nhapHang1);
+            this.Controls.Add(this.hoaDon1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -53,7 +53,8 @@
 
         #endregion
 
-        private NhapHang nhapHang1;
+        private HoaDon hoaDon1;
+
 
     }
 }

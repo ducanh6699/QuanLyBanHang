@@ -90,7 +90,7 @@ namespace RetailWin
             }
         }
 
-        private void NhapHang_Load(object sender, EventArgs e)
+        public void NhapHang_Load(object sender, EventArgs e)
         {
             LayNhapHang();
             LayMatHang();
