@@ -62,7 +62,7 @@ namespace WebApplication1
             Chartthunhap.DataSource = tb;
             Chartthunhap.DataBind();
 
-            sql = "Select top 10 tenmathang, soluongton from mathang ORDER BY soluongton ASC";
+            sql = "Select top 10 tenmathang, soluongton from mathang ORDER BY ABS(soluongton) ASC";
             tb = libraryweb.laydulieu(sql);
             hangsaphet.DataSource = tb;
             hangsaphet.DataBind();
