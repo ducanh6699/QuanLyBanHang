@@ -361,7 +361,7 @@
                     <div class="card">
                         <article class="card-group-item">
                             <header class="card-header">
-                                <h6 class="title">Tìm theo tên </h6>
+                                <h6 class="title">Tìm theo tên và giá </h6>
                             </header>
                             <div class="filter-content">
                                 <div class="card-body">
